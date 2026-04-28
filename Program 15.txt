@@ -1,0 +1,34 @@
+import javax.swing.*;
+import java.awt.*;
+
+class ShapesFrame extends JFrame {
+
+    String shape="";
+
+    ShapesFrame() {
+        setLayout(new FlowLayout());
+
+        String s[]={"Circle","Oval","Rect","Square","Line","Arc","RoundRect","3DRect","Polygon","FillOval"};
+
+        for(String str:s){
+            JButton b=new JButton(str);
+            add(b);
+            b.addActionListener(e -> { shape=str; repaint(); });
+        }
+
+        setSize(400,400);
+        setVisible(true);
+    }
+
+    public void paint(Graphics g){
+        super.paint(g);
+
+        if(shape.equals("Circle")) g.drawOval(150,150,100,100);
+        if(shape.equals("Rect")) g.drawRect(150,150,100,60);
+        if(shape.equals("Oval")) g.drawOval(150,150,120,80);
+    }
+
+    public static void main(String[] args){
+        new ShapesFrame();
+    }
+}
