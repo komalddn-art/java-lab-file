@@ -1,0 +1,49 @@
+class MatrixOps {
+    public static void main(String[] args) {
+
+        int a[][]={{1,2},{3,4}};
+        int b[][]={{5,6},{7,8}};
+
+        int c[][]=new int[2][2];
+
+        // Addition
+        System.out.println("Addition:");
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++){
+                c[i][j]=a[i][j]+b[i][j];
+                System.out.print(c[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        // Transpose
+        System.out.println("Transpose:");
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++)
+                System.out.print(a[j][i]+" ");
+            System.out.println();
+        }
+
+        // Row Sum
+        for(int i=0;i<2;i++){
+            int sum=0;
+            for(int j=0;j<2;j++)
+                sum+=a[i][j];
+            System.out.println("Row "+i+" sum="+sum);
+        }
+
+        // Column Sum
+        for(int i=0;i<2;i++){
+            int sum=0;
+            for(int j=0;j<2;j++)
+                sum+=a[j][i];
+            System.out.println("Col "+i+" sum="+sum);
+        }
+
+        // Diagonal
+        int dsum=0;
+        for(int i=0;i<2;i++)
+            dsum+=a[i][i];
+        System.out.println("Diagonal sum="+dsum);
+    }
+}
