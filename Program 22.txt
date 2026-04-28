@@ -1,0 +1,27 @@
+abstract class Animal {
+    abstract void sound();
+}
+
+interface Pet {
+    void play();
+}
+
+class Dog extends Animal implements Pet {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public void play() {
+        System.out.println("Dog is playing");
+    }
+}
+
+public class OOPDemo {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+        d.sound();
+        d.play();
+    }
+}
