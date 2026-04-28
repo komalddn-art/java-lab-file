@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+class MatrixSwing {
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Matrix Add");
+
+        JTextField a1=new JTextField(),a2=new JTextField(),a3=new JTextField(),a4=new JTextField();
+        JTextField b1=new JTextField(),b2=new JTextField(),b3=new JTextField(),b4=new JTextField();
+        JButton btn=new JButton("Add");
+
+        a1.setBounds(50,50,40,30); a2.setBounds(100,50,40,30);
+        a3.setBounds(50,90,40,30); a4.setBounds(100,90,40,30);
+
+        b1.setBounds(160,50,40,30); b2.setBounds(210,50,40,30);
+        b3.setBounds(160,90,40,30); b4.setBounds(210,90,40,30);
+
+        btn.setBounds(120,140,80,30);
+
+        f.add(a1);f.add(a2);f.add(a3);f.add(a4);
+        f.add(b1);f.add(b2);f.add(b3);f.add(b4);
+        f.add(btn);
+
+        btn.addActionListener(e -> {
+            int c1=Integer.parseInt(a1.getText())+Integer.parseInt(b1.getText());
+            int c2=Integer.parseInt(a2.getText())+Integer.parseInt(b2.getText());
+            int c3=Integer.parseInt(a3.getText())+Integer.parseInt(b3.getText());
+            int c4=Integer.parseInt(a4.getText())+Integer.parseInt(b4.getText());
+
+            JOptionPane.showMessageDialog(f,c1+" "+c2+"\n"+c3+" "+c4);
+        });
+
+        f.setSize(350,250);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
